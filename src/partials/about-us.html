@@ -16,67 +16,152 @@
       <div class="about-us__slider swiper">
         <ul class="about-us__list swiper-wrapper">
           <li class="about-us__item swiper-slide">
-            <img
-              class="about-us__image"
-              src="./img/about-us/about-us-1.jpg"
-              alt="Приготування десерту"
-              loading="lazy"
-            />
+            <picture>
+              <source
+                media="(min-width: 1440px)"
+                srcset="
+                  ./img/about-us/about-us-1-desk.jpg    1x,
+                  ./img/about-us/about-us-1-desk-2x.jpg 2x
+                "
+              />
+              <source
+                media="(min-width: 768px)"
+                srcset="
+                  ./img/about-us/about-us-1-tablet.jpg    1x,
+                  ./img/about-us/about-us-1-tablet-2x.jpg 2x
+                "
+              />
+              <source
+                media="(max-width: 767px)"
+                srcset="
+                  ./img/about-us/about-us-1-mob.jpg    1x,
+                  ./img/about-us/about-us-1-mob-2x.jpg 2x
+                "
+              />
+              <img
+                class="about-us__image"
+                src="./img/about-us/about-us-1-mob.jpg"
+                alt="Приготування десерту"
+              />
+            </picture>
           </li>
 
           <li class="about-us__item swiper-slide">
-            <img
-              class="about-us__image"
-              src="./img/about-us/about-us-2.jpg"
-              alt="Команда Солодкої Майстерні"
-              loading="lazy"
-            />
+            <picture>
+              <source
+                media="(min-width: 1440px)"
+                srcset="
+                  ./img/about-us/about-us-2-desk.jpg    1x,
+                  ./img/about-us/about-us-2-desk-2x.jpg 2x
+                "
+              />
+              <source
+                media="(min-width: 768px)"
+                srcset="
+                  ./img/about-us/about-us-2-tablet.jpg    1x,
+                  ./img/about-us/about-us-2-tablet-2x.jpg 2x
+                "
+              />
+              <source
+                media="(max-width: 767px)"
+                srcset="./img/about-us/about-us-2-mob-2x.jpg 2x"
+              />
+              <img
+                class="about-us__image"
+                src="./img/about-us/about-us-2-tablet.jpg"
+                alt="Команда Солодкої Майстерні"
+              />
+            </picture>
           </li>
 
           <li class="about-us__item swiper-slide">
-            <img
-              class="about-us__image"
-              src="./img/about-us/about-us-3.jpg"
-              alt="Вітрина з десертами"
-              loading="lazy"
-            />
+            <picture>
+              <source
+                media="(min-width: 1440px)"
+                srcset="
+                  ./img/about-us/about-us-3-desk.jpg    1x,
+                  ./img/about-us/about-us-3-desk-2x.jpg 2x
+                "
+              />
+              <source
+                media="(min-width: 768px)"
+                srcset="./img/about-us/about-us-3-tablet.jpg 1x"
+              />
+              <source
+                media="(max-width: 767px)"
+                srcset="
+                  ./img/about-us/about-us-3-mob.jpg    1x,
+                  ./img/about-us/about-us-3-mob-2x.jpg 2x
+                "
+              />
+              <img
+                class="about-us__image"
+                src="./img/about-us/about-us-3-mob.jpg"
+                alt="Вітрина з десертами"
+              />
+            </picture>
           </li>
 
           <li class="about-us__item swiper-slide">
-            <img
-              class="about-us__image"
-              src="./img/about-us/about-us-4.jpg"
-              alt="Дівчина з десертом"
-              loading="lazy"
-            />
+            <picture>
+              <source
+                media="(min-width: 1440px)"
+                srcset="
+                  ./img/about-us/about-us-4-desk.jpg    1x,
+                  ./img/about-us/about-us-4-desk-2x.jpg 2x
+                "
+              />
+              <source
+                media="(min-width: 768px)"
+                srcset="
+                  ./img/about-us/about-us-4-tablet.jpg    1x,
+                  ./img/about-us/about-us-4-tablet-2x.jpg 2x
+                "
+              />
+              <source
+                media="(max-width: 767px)"
+                srcset="
+                  ./img/about-us/about-us-4-mob.jpg    1x,
+                  ./img/about-us/about-us-4-mob-2x.jpg 2x
+                "
+              />
+              <img
+                class="about-us__image"
+                src="./img/about-us/about-us-4-mob.jpg"
+                alt="Дівчина з десертом"
+              />
+            </picture>
           </li>
         </ul>
 
-        <!-- Назад: маленький контроль над солодкою темрявою. -->
+        <!-- Slider navigation -->
         <button
           class="about-us__button about-us__button--prev"
           type="button"
           aria-label="Попередній слайд"
         >
-          <svg class="about-us__button-icon" width="16" height="16">
-            <use href="./img/sprite.svg#icon-arrow_back"></use>
-          </svg>
+          <img
+            class="about-us__button-icon"
+            src="./img/about-us/about-us-arrow.svg.svg"
+            alt=""
+          />
         </button>
 
-        <!-- Вперед: ще один кадр майстерні. -->
         <button
           class="about-us__button about-us__button--next"
           type="button"
           aria-label="Наступний слайд"
         >
-          <svg class="about-us__button-icon" width="16" height="16">
-            <use href="./img/sprite.svg#icon-arrow_forward"></use>
-          </svg>
+          <img
+            class="about-us__button-icon about-us__button-icon--next"
+            src="./img/about-us/about-us-arrow.svg.svg"
+            alt=""
+          />
         </button>
-
-        <!-- Точки навігації, щоб не загубитись між слайдами. -->
-        <div class="about-us__pagination"></div>
       </div>
+
+      <!-- Custom slider pagination -->
+      <div class="about-us__pagination" aria-label="Slider pagination"></div>
     </div>
   </div>
 </section>

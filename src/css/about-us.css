@@ -1,4 +1,4 @@
-/* About Us: працюємо тільки в межах своєї секції. */
+/* About Us section */
 .about-us {
   background-color: var(--color-scheme-1-background);
 }
@@ -7,55 +7,78 @@
   text-align: center;
 }
 
-/* Заголовок секції, як у макеті. */
 .about-us__title {
-  margin-bottom: 20px;
-  font-family: var(--second-family);
-  font-weight: 700;
+  margin-bottom: 16px;
+
+  font-weight: 600;
   font-size: 36px;
   line-height: 1.2;
   letter-spacing: -0.01em;
   color: var(--color-scheme-1-text);
 }
 
-/* Опис: компактний блок без зайвого хаосу. */
 .about-us__text {
   max-width: 335px;
   margin: 0 auto 32px;
-  font-family: var(--font-family);
+
   font-size: 16px;
   line-height: 1.5;
   color: var(--color-scheme-1-text);
 }
 
-/* Обгортка слайдера. На мобілці Swiper ще спить. */
+/* Gallery */
 .about-us__slider {
   position: relative;
+  max-width: 335px;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
 .about-us__list {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .about-us__item {
   overflow: hidden;
-  border-radius: 16px;
+  border-radius: 24px;
+}
+
+.about-us__item picture {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .about-us__image {
+  display: block;
   width: 100%;
-  height: 198px;
+  height: 100%;
   object-fit: cover;
 }
 
-/* На мобілці навігація ховається в тінь. */
+/* Controls are hidden on mobile */
 .about-us__button,
 .about-us__pagination {
   display: none;
 }
 
+/* Mobile */
+@media screen and (max-width: 767px) {
+  .about-us__list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .about-us__item {
+    width: 100%;
+    height: 220px;
+  }
+}
+
+/* Tablet */
 @media screen and (min-width: 768px) {
   .about-us__title {
     margin-bottom: 24px;
@@ -65,48 +88,52 @@
   .about-us__text {
     max-width: 704px;
     margin-bottom: 40px;
-    font-size: 18px;
   }
 
-  /* Тут галерея оживає через Swiper. */
   .about-us__slider {
+    max-width: 704px;
     overflow: hidden;
   }
 
   .about-us__list {
-    flex-direction: row;
-    gap: 0;
+    display: flex;
   }
 
-  .about-us__image {
-    height: 260px;
+  .about-us__item {
+    flex-shrink: 0;
+    width: calc((100% - 24px) / 2);
+    height: 220px;
   }
 
-  /* Кнопки навігації: маленькі, але важливі. */
+  /* Slider navigation */
   .about-us__button {
     position: absolute;
     top: 50%;
-    z-index: 2;
+    z-index: 10;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     width: 40px;
     height: 40px;
-    border: 1px solid var(--color-scheme-1-border);
+    padding: 0;
+
+    border: 1px solid var(--color-scheme-1-text);
     border-radius: 50%;
-    background-color: var(--color-white);
-    color: var(--color-scheme-1-text);
+    background-color: var(--color-scheme-1-background);
+
+    cursor: pointer;
     transform: translateY(-50%);
+
     transition:
       background-color 250ms ease,
-      color 250ms ease,
       opacity 250ms ease;
   }
 
   .about-us__button:hover,
   .about-us__button:focus {
-    background-color: var(--color-scheme-1-accent);
-    color: var(--color-white);
+    background-color: var(--color-scheme-1-foreground);
   }
 
   .about-us__button--prev {
@@ -118,44 +145,70 @@
   }
 
   .about-us__button-icon {
-    fill: currentColor;
+    display: block;
+    width: 20px;
+    height: 20px;
   }
 
-  /* Коли слайдів більше немає — кнопка згасає. */
+  .about-us__button-icon--next {
+    transform: rotate(180deg);
+  }
+
   .about-us__button.swiper-button-disabled {
     opacity: 0.35;
     pointer-events: none;
   }
 
+  /* Pagination */
   .about-us__pagination {
     display: flex;
     justify-content: center;
     gap: 8px;
+
     margin-top: 24px;
   }
 
-  .about-us__pagination .swiper-pagination-bullet {
+  .about-us__pagination-bullet {
+    display: block;
+
     width: 8px;
     height: 8px;
-    margin: 0;
-    background-color: var(--color-scheme-1-text);
-    opacity: 0.3;
-    transition: opacity 250ms ease;
+    padding: 0;
+
+    border: none;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.25);
+
+    cursor: pointer;
+
+    transition:
+      background-color 250ms ease,
+      transform 250ms ease;
   }
 
-  /* Активна точка — знак, де ми зараз. */
-  .about-us__pagination .swiper-pagination-bullet-active {
-    opacity: 1;
+  .about-us__pagination-bullet--active {
+    background-color: var(--color-scheme-1-text);
+  }
+
+  .about-us__pagination-bullet:hover,
+  .about-us__pagination-bullet:focus {
+    transform: scale(1.2);
   }
 }
 
+/* Desktop */
 @media screen and (min-width: 1440px) {
   .about-us__text {
     max-width: 768px;
   }
 
-  .about-us__image {
-    height: 395px;
+  .about-us__slider {
+    max-width: 936px;
+  }
+
+  .about-us__item {
+    width: calc((100% - 32px) / 2);
+    height: 260px;
   }
 
   .about-us__button--prev {

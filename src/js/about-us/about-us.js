@@ -9,7 +9,7 @@ let aboutUsSwiper = null;
 
 // Create slider for tablet and desktop
 const createAboutUsSwiper = () => {
-  aboutUsSwiper = new Swiper('.about-us__slider', {
+  aboutUsSwiper = new Swiper('.about-us__viewport', {
     modules: [Navigation, Pagination],
 
     slidesPerView: 2,

@@ -11,7 +11,7 @@
     <title>Солодка майстерня</title>
     <script type="module" crossorigin src="/sugar-rush-labs/index.js"></script>
     <link rel="modulepreload" crossorigin href="/sugar-rush-labs/assets/vendor-B1ZHW564.js">
-    <link rel="stylesheet" crossorigin href="/sugar-rush-labs/assets/index-D2HnWmQl.css">
+    <link rel="stylesheet" crossorigin href="/sugar-rush-labs/assets/index-CkOHBG-V.css">
   </head>
   <body>
     
@@ -50,12 +50,28 @@
 
       <section class="section dessert-list-section">
   <div class="container">
-    <h2 class="dessert-section__title">Солодощі</h2>
-    <p class="dessert-section__description">
-      Спробуйте наші смачні десерти, які вас здивують!
-    </p>
+    <div class="dessert-tablet__wrapper">
+      <div class="dessert-tablet-title-left-section">
+        <h2 class="dessert-section__title">Солодощі</h2>
+        <p class="dessert-section__description">
+          Спробуйте наші смачні десерти, які вас здивують!
+        </p>
+      </div>
 
-    <ul class="dessert-category"></ul>
+      <div class="category-dropdown">
+        <button class="category-dropdown__btn" type="button">
+          <p class="category-dropdown__text">Всі десерти</p>
+          <span class="category-dropdown__arrow">
+            <svg width="24" height="24" aria-hidden="true">
+              <use href="/sugar-rush-labs/assets/sprite-7MDemDlu.svg#icon-keyboard_arrow_down"></use>
+            </svg>
+          </span>
+        </button>
+
+        <ul class="dessert-category"></ul>
+      </div>
+    </div>
+
     <ul class="dessert-list"></ul>
 
     <button class="dessert-load-more-btn dessert-button-hidden" type="button">

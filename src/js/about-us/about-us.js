@@ -7,12 +7,15 @@ import 'swiper/css/pagination';
 
 let aboutUsSwiper = null;
 
+// Create slider for tablet and desktop
 const createAboutUsSwiper = () => {
   aboutUsSwiper = new Swiper('.about-us__slider', {
     modules: [Navigation, Pagination],
 
     slidesPerView: 2,
-    spaceBetween: 16,
+    slidesPerGroup: 1,
+    spaceBetween: 24,
+    watchOverflow: false,
 
     navigation: {
       nextEl: '.about-us__button--next',
@@ -22,6 +25,8 @@ const createAboutUsSwiper = () => {
     pagination: {
       el: '.about-us__pagination',
       clickable: true,
+      bulletClass: 'about-us__pagination-bullet',
+      bulletActiveClass: 'about-us__pagination-bullet--active',
     },
 
     breakpoints: {
@@ -38,6 +43,7 @@ const createAboutUsSwiper = () => {
   });
 };
 
+// Remove slider on mobile
 const destroyAboutUsSwiper = () => {
   if (!aboutUsSwiper) return;
 
@@ -45,6 +51,7 @@ const destroyAboutUsSwiper = () => {
   aboutUsSwiper = null;
 };
 
+// Switch slider mode by screen width
 const checkAboutUsSwiper = () => {
   const isTabletOrDesktop = window.innerWidth >= 768;
 

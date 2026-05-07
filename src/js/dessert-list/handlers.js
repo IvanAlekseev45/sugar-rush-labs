@@ -1,12 +1,12 @@
 import refs from './refs';
 import renderDesserts from './renderDesserts';
+import renderDessertsById from './renderDessertsById';
 
-const handleCategoryFilter = e => {
+const handleCategoryFilter = async e => {
   const btn = e.target.closest('.dessert-category__btn');
   if (!btn) return;
 
   const categoryId = btn.dataset.id;
-  console.log(categoryId);
 
   document
     .querySelectorAll('.dessert-category__btn')
@@ -20,7 +20,8 @@ const handleCategoryFilter = e => {
     return;
   }
 
-  // renderCategoryById(categoryId);
+  refs.dessertList.innerHTML = '';
+  renderDessertsById(categoryId);
 };
 
 export default handleCategoryFilter;

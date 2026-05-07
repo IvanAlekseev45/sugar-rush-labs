@@ -1,0 +1,82 @@
+<section class="about-us section" id="about-us">
+  <div class="container">
+    <div class="about-us__content">
+      <!-- Заголовок секції. Тихо, чисто, по макету. -->
+      <h2 class="about-us__title">Про нас</h2>
+
+      <!-- Короткий опис майстерні без зайвого шуму. -->
+      <p class="about-us__text">
+        У нашій Солодкій Майстерні ми створюємо неповторні солодкі шедеври, що
+        приносять радість та задоволення. Наша місія — пропонувати високоякісні
+        десерти, які поєднують у собі вишуканий смак, свіжі інгредієнти та
+        естетичний вигляд.
+      </p>
+
+      <!-- Галерея: на мобілці статична, на tablet/desktop оживає через Swiper. -->
+      <div class="about-us__slider swiper">
+        <ul class="about-us__list swiper-wrapper">
+          <li class="about-us__item swiper-slide">
+            <img
+              class="about-us__image"
+              src="./img/about-us/about-us-1.jpg"
+              alt="Приготування десерту"
+              loading="lazy"
+            />
+          </li>
+
+          <li class="about-us__item swiper-slide">
+            <img
+              class="about-us__image"
+              src="./img/about-us/about-us-2.jpg"
+              alt="Команда Солодкої Майстерні"
+              loading="lazy"
+            />
+          </li>
+
+          <li class="about-us__item swiper-slide">
+            <img
+              class="about-us__image"
+              src="./img/about-us/about-us-3.jpg"
+              alt="Вітрина з десертами"
+              loading="lazy"
+            />
+          </li>
+
+          <li class="about-us__item swiper-slide">
+            <img
+              class="about-us__image"
+              src="./img/about-us/about-us-4.jpg"
+              alt="Дівчина з десертом"
+              loading="lazy"
+            />
+          </li>
+        </ul>
+
+        <!-- Назад: маленький контроль над солодкою темрявою. -->
+        <button
+          class="about-us__button about-us__button--prev"
+          type="button"
+          aria-label="Попередній слайд"
+        >
+          <svg class="about-us__button-icon" width="16" height="16">
+            <use href="./img/sprite.svg#icon-arrow_back"></use>
+          </svg>
+        </button>
+
+        <!-- Вперед: ще один кадр майстерні. -->
+        <button
+          class="about-us__button about-us__button--next"
+          type="button"
+          aria-label="Наступний слайд"
+        >
+          <svg class="about-us__button-icon" width="16" height="16">
+            <use href="./img/sprite.svg#icon-arrow_forward"></use>
+          </svg>
+        </button>
+
+        <!-- Точки навігації, щоб не загубитись між слайдами. -->
+        <div class="about-us__pagination"></div>
+      </div>
+    </div>
+  </div>
+</section>

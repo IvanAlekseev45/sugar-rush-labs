@@ -1,0 +1,168 @@
+/* About Us: працюємо тільки в межах своєї секції. */
+.about-us {
+  background-color: var(--color-scheme-1-background);
+}
+
+.about-us__content {
+  text-align: center;
+}
+
+/* Заголовок секції, як у макеті. */
+.about-us__title {
+  margin-bottom: 20px;
+  font-family: var(--second-family);
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--color-scheme-1-text);
+}
+
+/* Опис: компактний блок без зайвого хаосу. */
+.about-us__text {
+  max-width: 335px;
+  margin: 0 auto 32px;
+  font-family: var(--font-family);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-scheme-1-text);
+}
+
+/* Обгортка слайдера. На мобілці Swiper ще спить. */
+.about-us__slider {
+  position: relative;
+}
+
+.about-us__list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.about-us__item {
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.about-us__image {
+  width: 100%;
+  height: 198px;
+  object-fit: cover;
+}
+
+/* На мобілці навігація ховається в тінь. */
+.about-us__button,
+.about-us__pagination {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .about-us__title {
+    margin-bottom: 24px;
+    font-size: 48px;
+  }
+
+  .about-us__text {
+    max-width: 704px;
+    margin-bottom: 40px;
+    font-size: 18px;
+  }
+
+  /* Тут галерея оживає через Swiper. */
+  .about-us__slider {
+    overflow: hidden;
+  }
+
+  .about-us__list {
+    flex-direction: row;
+    gap: 0;
+  }
+
+  .about-us__image {
+    height: 260px;
+  }
+
+  /* Кнопки навігації: маленькі, але важливі. */
+  .about-us__button {
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--color-scheme-1-border);
+    border-radius: 50%;
+    background-color: var(--color-white);
+    color: var(--color-scheme-1-text);
+    transform: translateY(-50%);
+    transition:
+      background-color 250ms ease,
+      color 250ms ease,
+      opacity 250ms ease;
+  }
+
+  .about-us__button:hover,
+  .about-us__button:focus {
+    background-color: var(--color-scheme-1-accent);
+    color: var(--color-white);
+  }
+
+  .about-us__button--prev {
+    left: 8px;
+  }
+
+  .about-us__button--next {
+    right: 8px;
+  }
+
+  .about-us__button-icon {
+    fill: currentColor;
+  }
+
+  /* Коли слайдів більше немає — кнопка згасає. */
+  .about-us__button.swiper-button-disabled {
+    opacity: 0.35;
+    pointer-events: none;
+  }
+
+  .about-us__pagination {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 24px;
+  }
+
+  .about-us__pagination .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    margin: 0;
+    background-color: var(--color-scheme-1-text);
+    opacity: 0.3;
+    transition: opacity 250ms ease;
+  }
+
+  /* Активна точка — знак, де ми зараз. */
+  .about-us__pagination .swiper-pagination-bullet-active {
+    opacity: 1;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .about-us__text {
+    max-width: 768px;
+  }
+
+  .about-us__image {
+    height: 395px;
+  }
+
+  .about-us__button--prev {
+    left: 16px;
+  }
+
+  .about-us__button--next {
+    right: 16px;
+  }
+}

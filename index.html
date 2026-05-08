@@ -12,7 +12,7 @@
     <script type="module" crossorigin src="/sugar-rush-labs/index.js"></script>
     <link rel="modulepreload" crossorigin href="/sugar-rush-labs/assets/vendor-DwCZRSuH.js">
     <link rel="stylesheet" crossorigin href="/sugar-rush-labs/assets/vendor-C36v_zpT.css">
-    <link rel="stylesheet" crossorigin href="/sugar-rush-labs/assets/index-B1NCta9f.css">
+    <link rel="stylesheet" crossorigin href="/sugar-rush-labs/assets/index-CnR9rZQb.css">
   </head>
   <body>
     
@@ -31,28 +31,63 @@
       <section class="section bestsellers-sections">
   <div class="container bestsellers">
     <h2 class="bestsellers-title">Наші бестселлери</h2>
+
     <div class="bestseller-loader-wrapper">
-        <div class="swiper-bestsellers">
-            <ul class="bestsellers-list swiper-wrapper"></ul>
-            <div class="pagitate-box">
-                <div class="swiper-pagination"></div>
-            <div class="bestsellers-nav-btn">
-        <button class="page-left-btn" type="button"><svg class="bestsellers-button-svg" width="24" height="24" aria-hidden="true"><use href="/sugar-rush-labs/assets/sprite-7MDemDlu.svg#icon-arrow_back"></use></svg></button>
-        <button class="page-right-btn" type="button"><svg class="bestsellers-button-svg" width="24" height="24" aria-hidden="true"><use href="/sugar-rush-labs/assets/sprite-7MDemDlu.svg#icon-arrow_forward"></use></svg></button></div>
-            
-    </div>
+      <div class="swiper-bestsellers">
+        <ul
+          class="bestsellers-list swiper-wrapper"
+          aria-label="Список бестселерів"
+        ></ul>
+
+        <div class="paginate-box">
+          <div
+            class="swiper-pagination"
+            aria-label="Навігація по слайдах"
+          ></div>
+          <div class="bestsellers-nav-btn">
+            <button
+              class="page-left-btn"
+              type="button"
+              aria-label="Попередній слайд"
+            >
+              <svg
+                class="bestsellers-button-svg"
+                width="24"
+                height="24"
+                aria-hidden="true"
+              >
+                <use href="/sugar-rush-labs/assets/sprite-7MDemDlu.svg#icon-arrow_back"></use>
+              </svg>
+            </button>
+            <button
+              class="page-right-btn"
+              type="button"
+              aria-label="Наступний слайд"
+            >
+              <svg
+                class="bestsellers-button-svg"
+                width="24"
+                height="24"
+                aria-hidden="true"
+              >
+                <use href="/sugar-rush-labs/assets/sprite-7MDemDlu.svg#icon-arrow_forward"></use>
+              </svg>
+            </button>
+          </div>
         </div>
-        <div class="loader bestsellers-loader">
-            <div class="cup">
-                <div class="cup-handle"></div>
-                <div class="smoke one"></div>
-                <div class="smoke two"></div>
-                <div class="smoke three"></div>
-            </div>
-            <div class="load">..........................</div>
-       
+      </div>
+
+      <div class="loader bestsellers-loader" aria-hidden="true">
+        <div class="cup">
+          <div class="cup-handle"></div>
+          <div class="smoke one"></div>
+          <div class="smoke two"></div>
+          <div class="smoke three"></div>
+        </div>
+        <div class="load">..........................</div>
+      </div>
     </div>
-    
+  </div>
 </section>
 
       <section class="section dessert-list-section" id="sweets">

@@ -1,4 +1,4 @@
-import{a as g,i,A as H,S as I,N as T,P as F,K as N}from"./assets/vendor-YU0yCr7_.js";(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const o of document.querySelectorAll('link[rel="modulepreload"]'))r(o);new MutationObserver(o=>{for(const n of o)if(n.type==="childList")for(const c of n.addedNodes)c.tagName==="LINK"&&c.rel==="modulepreload"&&r(c)}).observe(document,{childList:!0,subtree:!0});function t(o){const n={};return o.integrity&&(n.integrity=o.integrity),o.referrerPolicy&&(n.referrerPolicy=o.referrerPolicy),o.crossOrigin==="use-credentials"?n.credentials="include":o.crossOrigin==="anonymous"?n.credentials="omit":n.credentials="same-origin",n}function r(o){if(o.ep)return;o.ep=!0;const n=t(o);fetch(o.href,n)}})();const w={body:document.body},z=async s=>{const e="https://deserts-store.b.goit.study/api",{data:t}=await g.get(`${e}/desserts/${s}`);return t},V=async s=>{const e=s.target.closest(".js-dessert-modal-open");if(!e)return;const t=e.dataset.id;if(!t){i.error({message:"Не вдалося визначити десерт. Спробуйте ще раз.",position:"topRight"});return}Q();try{const r=await z(t);X(r)}catch(r){y(),i.error({message:"Не вдалося завантажити інформацію про десерт. Спробуйте ще раз.",position:"topRight"}),console.log(r)}},K=s=>{const e=W();s.target===e&&y()},C=s=>{s.key==="Escape"&&y()},G=()=>{y()},U=s=>{const e=s.currentTarget.dataset.dessertId;y();const t=new CustomEvent("open-order-modal",{detail:{dessertId:e}});document.dispatchEvent(t)};let l=null;const J=()=>{document.addEventListener("click",V)},Q=()=>{l=document.createElement("div"),l.classList.add("dessert-modal-backdrop"),l.innerHTML=`
+import{a as g,i as d,A as N,S as z,N as F,P as K,K as V}from"./assets/vendor-YU0yCr7_.js";(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const r of document.querySelectorAll('link[rel="modulepreload"]'))o(r);new MutationObserver(r=>{for(const n of r)if(n.type==="childList")for(const i of n.addedNodes)i.tagName==="LINK"&&i.rel==="modulepreload"&&o(i)}).observe(document,{childList:!0,subtree:!0});function t(r){const n={};return r.integrity&&(n.integrity=r.integrity),r.referrerPolicy&&(n.referrerPolicy=r.referrerPolicy),r.crossOrigin==="use-credentials"?n.credentials="include":r.crossOrigin==="anonymous"?n.credentials="omit":n.credentials="same-origin",n}function o(r){if(r.ep)return;r.ep=!0;const n=t(r);fetch(r.href,n)}})();const L={body:document.body},G=async s=>{const e="https://deserts-store.b.goit.study/api",{data:t}=await g.get(`${e}/desserts/${s}`);return t},U=async s=>{const e=s.target.closest(".js-dessert-modal-open");if(!e)return;const t=e.dataset.id;if(!t){d.error({message:"Не вдалося визначити десерт. Спробуйте ще раз.",position:"topRight"});return}Y();try{const o=await G(t);ee(o)}catch(o){b(),d.error({message:"Не вдалося завантажити інформацію про десерт. Спробуйте ще раз.",position:"topRight"}),console.log(o)}},J=s=>{const e=Z();s.target===e&&b()},D=s=>{s.key==="Escape"&&b()},Q=()=>{b()},W=s=>{const e=s.currentTarget.dataset.dessertId;b();const t=new CustomEvent("open-order-modal",{detail:{dessertId:e}});document.dispatchEvent(t)};let c=null;const X=()=>{document.addEventListener("click",U)},Y=()=>{c=document.createElement("div"),c.classList.add("dessert-modal-backdrop"),c.innerHTML=`
     <div class="dessert-modal" role="dialog" aria-modal="true">
       <button
         class="dessert-modal__close-btn"
@@ -11,7 +11,7 @@ import{a as g,i,A as H,S as I,N as T,P as F,K as N}from"./assets/vendor-YU0yCr7_
           height="24"
           aria-hidden="true"
         >
-          <use href="/img/sprite.svg#icon-close"></use>
+          <use href="../img/sprite.svg#icon-close"></use>
         </svg>
       </button>
 
@@ -27,29 +27,29 @@ import{a as g,i,A as H,S as I,N as T,P as F,K as N}from"./assets/vendor-YU0yCr7_
         </div>
       </div>
     </div>
-  `,w.body.append(l),w.body.classList.add("no-scroll"),l.addEventListener("click",K),document.addEventListener("keydown",C),l.querySelector(".dessert-modal__close-btn").addEventListener("click",G)},y=()=>{l&&(l.remove(),l=null,w.body.classList.remove("no-scroll"),document.removeEventListener("keydown",C))},W=()=>l,X=s=>{if(!l)return;const e=l.querySelector(".dessert-modal__content"),{_id:t,name:r,price:o,rate:n,description:c,composition:u,image:f}=s,b=u||"";e.innerHTML=`
+  `,L.body.append(c),L.body.classList.add("no-scroll"),c.addEventListener("click",J),document.addEventListener("keydown",D),c.querySelector(".dessert-modal__close-btn").addEventListener("click",Q)},b=()=>{c&&(c.remove(),c=null,L.body.classList.remove("no-scroll"),document.removeEventListener("keydown",D))},Z=()=>c,ee=s=>{if(!c)return;const e=c.querySelector(".dessert-modal__content"),{_id:t,name:o,price:r,rate:n,description:i,composition:u,image:B}=s,h=u||"";e.innerHTML=`
     <img
       class="dessert-modal__image"
-      src="${f}"
-      alt="${r}"
+      src="${B}"
+      alt="${o}"
     />
 
     <div class="dessert-modal__info">
 
-      <h2 class="dessert-modal__title">${r}</h2>
+      <h2 class="dessert-modal__title">${o}</h2>
 
-      <p class="dessert-modal__price">${o} грн</p>
+      <p class="dessert-modal__price">${r} грн</p>
 
       <div class="dessert-modal__rating">
-        ${Z(n)}
+        ${te(n)}
       </div>
 
       <p class="dessert-modal__description">
-        ${c}
+        ${i}
       </p>
 
       <p class="dessert-modal__ingredients">
-        <b>Склад:</b> ${b}
+        <b>Склад:</b> ${h}
       </p>
 
       <button
@@ -60,36 +60,36 @@ import{a as g,i,A as H,S as I,N as T,P as F,K as N}from"./assets/vendor-YU0yCr7_
         Перейти до замовлення
       </button>
     </div>
-  `,e.querySelector(".dessert-modal__order-btn").addEventListener("click",U)},Y=s=>{const e=Number(s);if(Number.isNaN(e))return 0;const t=Math.round(e*2)/2;return Math.min(Math.max(t,0),5)},Z=s=>{const e=Y(s),t=Math.floor(e),r=e%1!==0;return`
+  `,e.querySelector(".dessert-modal__order-btn").addEventListener("click",W)},se=s=>{const e=Number(s);if(Number.isNaN(e))return 0;const t=Math.round(e*2)/2;return Math.min(Math.max(t,0),5)},te=s=>{const e=se(s),t=Math.floor(e),o=e%1!==0;return`
     <div
-      class="rating medium star-svg color-default direction-ltr value-${t} ${r?"half":""}"
+      class="rating medium star-svg color-default direction-ltr value-${t} ${o?"half":""}"
       aria-label="Рейтинг ${e} з 5"
     >
       <div class="star-container">
         ${Array.from({length:5},()=>`
             <div class="star">
               <svg class="star-empty">
-                <use href="/img/star-rating.icons.svg#star-empty"></use>
+                <use href="../img/star-rating.icons.svg#star-empty"></use>
               </svg>
               <svg class="star-half">
-                <use href="/img/star-rating.icons.svg#star-half"></use>
+                <use href="../img/star-rating.icons.svg#star-half"></use>
               </svg>
               <svg class="star-filled">
-                <use href="/img/star-rating.icons.svg#star-filled"></use>
+                <use href="../img/star-rating.icons.svg#star-filled"></use>
               </svg>
             </div>
           `).join("")}
       </div>
     </div>
-  `};J();const a={dessertList:document.querySelector(".dessert-list"),dessertCategory:document.querySelector(".dessert-category"),dessertLoadMoreBtn:document.querySelector(".dessert-load-more-btn"),dropdown:document.querySelector(".category-dropdown"),dropdownBtn:document.querySelector(".category-dropdown__btn"),dropdownText:document.querySelector(".category-dropdown__text"),dessertLoader:document.querySelector(".dessert-loader")},ee=async()=>{const s="https://deserts-store.b.goit.study/api",{data:e}=await g.get(`${s}/categories`);return e},se=async()=>{try{const s=await ee(),e=`
+  `};X();const a={dessertList:document.querySelector(".dessert-list"),dessertCategory:document.querySelector(".dessert-category"),dessertLoadMoreBtn:document.querySelector(".dessert-load-more-btn"),dropdown:document.querySelector(".category-dropdown"),dropdownBtn:document.querySelector(".category-dropdown__btn"),dropdownText:document.querySelector(".category-dropdown__text"),dessertLoader:document.querySelector(".dessert-loader")},oe=async()=>{const s="https://deserts-store.b.goit.study/api",{data:e}=await g.get(`${s}/categories`);return e},re=async()=>{try{const s=await oe(),e=`
     <li class="dessert-category__item">
         <button class="dessert-category__btn active__btn" type="button" data-id="all">Всі десерти</button>
     </li>
-  `,t=s.map(({_id:r,name:o})=>`
+  `,t=s.map(({_id:o,name:r})=>`
         <li class="dessert-category__item">
-            <button class="dessert-category__btn" type="button" data-id="${r}">${o}</button>
+            <button class="dessert-category__btn" type="button" data-id="${o}">${r}</button>
         </li>
-      `).join("");a.dessertCategory.insertAdjacentHTML("beforeend",e+t)}catch{i.error({message:"Виникла помилка при завантаженні категорій, спробуйте пізніше.",position:"topRight"})}},$=async(s=1,e="all")=>{const t=e==="all"?"https://deserts-store.b.goit.study/api/desserts":`https://deserts-store.b.goit.study/api/desserts?category=${e}`,{data:r}=await g.get(`${t}`,{params:{page:s,limit:8}});return r},q="/sugar-rush-labs/assets/sprite-7MDemDlu.svg",M=s=>{const e=s.map(({_id:t,name:r,description:o,price:n,category:c,image:u})=>`
+      `).join("");a.dessertCategory.insertAdjacentHTML("beforeend",e+t)}catch{d.error({message:"Виникла помилка при завантаженні категорій, спробуйте пізніше.",position:"topRight"})}},E=async(s=1,e="all")=>{const t=e==="all"?"https://deserts-store.b.goit.study/api/desserts":`https://deserts-store.b.goit.study/api/desserts?category=${e}`,{data:o}=await g.get(`${t}`,{params:{page:s,limit:8}});return o},x="/sugar-rush-labs/assets/sprite-7MDemDlu.svg",$=s=>{const e=s.map(({_id:t,name:o,description:r,price:n,category:i,image:u})=>`
       <li class="dessert-list__item">
         <div class="dessert-list__wrapper">
 
@@ -105,37 +105,37 @@ import{a as g,i,A as H,S as I,N as T,P as F,K as N}from"./assets/vendor-YU0yCr7_
             </div>
           </div>
 
-          <img class="dessert-list__image" src="${u}" alt="${r}" loading="eager" fetchpriority="high" />
-          <p class="dessert-list__category">${c.name}</p>
+          <img class="dessert-list__image" src="${u}" alt="${o}" loading="eager" fetchpriority="high" />
+          <p class="dessert-list__category">${i.name}</p>
 
-          <p class="dessert-list__title">${r}</p>
-          <p class="dessert-list__description">${o}</p>
+          <p class="dessert-list__title">${o}</p>
+          <p class="dessert-list__description">${r}</p>
         </div>
         <div class="dessert-list__wrapper__bottom">
           <p class="dessert-list__price">${n} грн</p>
           <button class="dessert-list__btn js-dessert-modal-open" type="button" data-id="${t}">
             <svg width="24" height="24" class="dessert-list__icon" aria-hidden="true">
-              <use href="${q}#icon-arrow_outward"></use>
+              <use href="${x}#icon-arrow_outward"></use>
             </svg>
           </button>
         </div>
       </li>
-      `).join("");a.dessertList.insertAdjacentHTML("beforeend",e),a.dessertList.querySelectorAll(".dessert-list__image").forEach(t=>{const r=t.previousElementSibling;if(t.complete){r.style.display="none",t.classList.add("img__is-loaded");return}t.addEventListener("load",()=>{r.style.display="none",t.classList.add("img__is-loaded")}),t.addEventListener("error",()=>{r.style.display="none",t.classList.add("img__is-loaded")})})},te=()=>{a.dessertLoader.style.display="block"},re=()=>{a.dessertLoader.style.display="none"},p={showLoader:te,hideLoader:re},oe=async(s=1,e="all")=>{p.showLoader();try{const{desserts:t}=await $(s,e);M(t),p.hideLoader(),a.dessertLoadMoreBtn.classList.remove("dessert-button-hidden")}catch{i.error({message:"Виникла помилка при завантаженні десертів, спробуйте пізніше.",position:"topRight"})}};let m=1,k="all";const R=s=>{const e=Math.ceil(s/8);m<e?(a.dessertLoadMoreBtn.classList.remove("dessert-button-hidden"),a.dessertLoadMoreBtn.disabled=!1):(a.dessertLoadMoreBtn.classList.add("dessert-button-hidden"),a.dessertLoadMoreBtn.disabled=!0)},ae=async s=>{const e=s.target.closest(".dessert-category__btn");if(e){m=1,k=e.dataset.id,document.querySelectorAll(".dessert-category__btn").forEach(t=>t.classList.remove("active__btn")),e.classList.add("active__btn"),a.dessertList.innerHTML="",p.showLoader();try{const t=await $(m,k);M(t.desserts),R(t.totalItems)}catch{i.error({message:"Виникла помилка при зміні категорії, спробуйте пізніше.",position:"topRight"})}finally{p.hideLoader()}}},ne=async()=>{a.dessertLoadMoreBtn.classList.add("dessert-button-hidden"),a.dessertLoadMoreBtn.disabled=!0,p.showLoader(),m+=1;try{const{desserts:s,totalItems:e}=await $(m,k);M(s),R(e)}catch{i.error({message:"Виникла помилка при завантаженні десертів, спробуйте пізніше.",position:"topRight"})}finally{p.hideLoader()}},D={handleCategoryFilter:ae,handleLoadMoreDesserts:ne};a.dropdownBtn.addEventListener("click",()=>{a.dropdown.classList.toggle("is-open")});a.dropdown.addEventListener("click",s=>{const e=s.target.closest(".dessert-category__btn");e&&(a.dropdownText.textContent=e.textContent,a.dropdown.classList.remove("is-open"))});document.addEventListener("click",s=>{a.dropdown.contains(s.target)||a.dropdown.classList.remove("is-open")});se();oe();a.dessertCategory.addEventListener("click",D.handleCategoryFilter);a.dessertLoadMoreBtn.addEventListener("click",D.handleLoadMoreDesserts);new H(".accordion-container",{showMultiple:!1,duration:300});const x={bestsellersList:document.querySelector(".bestsellers-list"),loaderBestsellers:document.querySelector(".bestsellers-loader"),leftBtn:document.querySelector(".page-left-btn"),rightBtn:document.querySelector(".page-right-btn")},de=async()=>{try{const s="https://deserts-store.b.goit.study/api",{data:e}=await g.get(`${s}/desserts?type=popular&limit=18`);return e}catch{i.error({message:"Йой, здається, розробники щось нахімічили з ТОП-десертами, спробуйте пізніше.",position:"topRight",messageSize:16,messageLineHeight:26,closeOnClick:!0,progressBar:!1})}};async function le(){const s=x.loaderBestsellers;s.style.display="block";try{const{desserts:e}=await de();ie(e)}catch{i.error({message:"Йой, здається, розробники щось нахімічили з ТОП-десертами, спробуйте пізніше.",position:"topRight",messageSize:16,messageLineHeight:26,closeOnClick:!0,progressBar:!1})}finally{s.style.display="none"}}document.addEventListener("DOMContentLoaded",le);let v=null;function S(){const s=document.querySelectorAll(".bestsellers-list-item");s.forEach(e=>{e.style.height="auto",e.style.display="flex",e.style.flexDirection="column",e.style.justifyContent="space-between"}),requestAnimationFrame(()=>{let e=0;s.forEach(t=>{t.offsetHeight>e&&(e=t.offsetHeight)}),s.forEach(t=>t.style.height=e+"px")})}function ie(s){const e=s.map(({image:t,category:r,description:o,name:n,price:c,_id:u})=>`<li class="bestsellers-list-item swiper-slide">
+      `).join("");a.dessertList.insertAdjacentHTML("beforeend",e),a.dessertList.querySelectorAll(".dessert-list__image").forEach(t=>{const o=t.previousElementSibling;if(t.complete){o.style.display="none",t.classList.add("img__is-loaded");return}t.addEventListener("load",()=>{o.style.display="none",t.classList.add("img__is-loaded")}),t.addEventListener("error",()=>{o.style.display="none",t.classList.add("img__is-loaded")})})},ae=()=>{a.dessertLoader.style.display="block"},ne=()=>{a.dessertLoader.style.display="none"},m={showLoader:ae,hideLoader:ne},de=async(s=1,e="all")=>{m.showLoader();try{const{desserts:t}=await E(s,e);$(t),m.hideLoader(),a.dessertLoadMoreBtn.classList.remove("dessert-button-hidden")}catch{d.error({message:"Виникла помилка при завантаженні десертів, спробуйте пізніше.",position:"topRight"})}};let p=1,w="all";const O=s=>{const e=Math.ceil(s/8);p<e?(a.dessertLoadMoreBtn.classList.remove("dessert-button-hidden"),a.dessertLoadMoreBtn.disabled=!1):(a.dessertLoadMoreBtn.classList.add("dessert-button-hidden"),a.dessertLoadMoreBtn.disabled=!0)},le=async s=>{const e=s.target.closest(".dessert-category__btn");if(e){p=1,w=e.dataset.id,document.querySelectorAll(".dessert-category__btn").forEach(t=>t.classList.remove("active__btn")),e.classList.add("active__btn"),a.dessertList.innerHTML="",m.showLoader();try{const t=await E(p,w);$(t.desserts),O(t.totalItems)}catch{d.error({message:"Виникла помилка при зміні категорії, спробуйте пізніше.",position:"topRight"})}finally{m.hideLoader()}}},ie=async()=>{a.dessertLoadMoreBtn.classList.add("dessert-button-hidden"),a.dessertLoadMoreBtn.disabled=!0,m.showLoader(),p+=1;try{const{desserts:s,totalItems:e}=await E(p,w);$(s),O(e)}catch{d.error({message:"Виникла помилка при завантаженні десертів, спробуйте пізніше.",position:"topRight"})}finally{m.hideLoader()}},P={handleCategoryFilter:le,handleLoadMoreDesserts:ie};a.dropdownBtn.addEventListener("click",()=>{a.dropdown.classList.toggle("is-open")});a.dropdown.addEventListener("click",s=>{const e=s.target.closest(".dessert-category__btn");e&&(a.dropdownText.textContent=e.textContent,a.dropdown.classList.remove("is-open"))});document.addEventListener("click",s=>{a.dropdown.contains(s.target)||a.dropdown.classList.remove("is-open")});re();de();a.dessertCategory.addEventListener("click",P.handleCategoryFilter);a.dessertLoadMoreBtn.addEventListener("click",P.handleLoadMoreDesserts);new N(".accordion-container",{showMultiple:!1,duration:300});const j={bestsellersList:document.querySelector(".bestsellers-list"),loaderBestsellers:document.querySelector(".bestsellers-loader"),leftBtn:document.querySelector(".page-left-btn"),rightBtn:document.querySelector(".page-right-btn")},ce=async()=>{try{const s="https://deserts-store.b.goit.study/api",{data:e}=await g.get(`${s}/desserts?type=popular&limit=18`);return e}catch{d.error({message:"Йой, здається, розробники щось нахімічили з ТОП-десертами, спробуйте пізніше.",position:"topRight",messageSize:16,messageLineHeight:26,closeOnClick:!0,progressBar:!1})}};async function ue(){const s=j.loaderBestsellers;s.style.display="block";try{const{desserts:e}=await ce();me(e)}catch{d.error({message:"Йой, здається, розробники щось нахімічили з ТОП-десертами, спробуйте пізніше.",position:"topRight",messageSize:16,messageLineHeight:26,closeOnClick:!0,progressBar:!1})}finally{s.style.display="none"}}document.addEventListener("DOMContentLoaded",ue);let y=null;function R(){const s=document.querySelectorAll(".bestsellers-list-item");s.forEach(e=>{e.style.height="auto",e.style.display="flex",e.style.flexDirection="column",e.style.justifyContent="space-between"}),requestAnimationFrame(()=>{let e=0;s.forEach(t=>{t.offsetHeight>e&&(e=t.offsetHeight)}),s.forEach(t=>t.style.height=e+"px")})}function me(s){const e=s.map(({image:t,category:o,description:r,name:n,price:i,_id:u})=>`<li class="bestsellers-list-item swiper-slide">
             <div class="bestsellers-top">
                 <img class="bestsellers-image" src="${t}" alt="${n}"/>
-                <p class="bestsellers-category">${r.name}</p>
+                <p class="bestsellers-category">${o.name}</p>
                 <h3 class="bestsellers-name">${n}</h3>
-                <p class="bestsellers-description">${o}</p>
+                <p class="bestsellers-description">${r}</p>
             </div>
             <div class="bestsellers-wrapper">
-                <p class="bestsellers-price">${c} грн</p>
+                <p class="bestsellers-price">${i} грн</p>
                 <button class="bestsellers-modal-btn js-dessert-modal-open" type="button" aria-label="Подивитись детальну інформацію" data-id="${u}">
                 <svg width="24" height="24" aria-hidden="true">
-                    <use href="${q}#icon-arrow_outward"></use>
+                    <use href="${x}#icon-arrow_outward"></use>
                 </svg>
                 </button>
             </div>
-        </li>`).join("");x.bestsellersList.innerHTML=e,v&&(v.destroy(!0,!0),v=null),v=new I(".swiper-bestsellers",{modules:[T,F,N],keyboard:{enabled:!0,onlyInViewport:!0},slidesPerView:1,slidesPerGroup:1,spaceBetween:16,breakpoints:{768:{slidesPerView:2,slidesPerGroup:2,spaceBetween:16},1440:{slidesPerView:3,slidesPerGroup:3,spaceBetween:24}},pagination:{el:".swiper-pagination",dynamicBullets:!0,clickable:!0},navigation:{prevEl:".page-left-btn",nextEl:".page-right-btn"},on:{init(){S()},resize(){S()}}})}const E={body:document.body},ce="https://deserts-store.b.goit.study/api",ue=async s=>{const{data:e}=await g.post(`${ce}/orders`,s);return e},O=s=>{s.target.classList.contains("order-modal-backdrop")&&_()},j=s=>{s.key==="Escape"&&_()},P=()=>{_()},A=async s=>{var u,f,b,L;s.preventDefault();const e=s.currentTarget;if(!e.checkValidity()){e.reportValidity();return}const t=ge();if(!t){i.error({message:"Не вдалося визначити десерт для замовлення",position:"topRight",color:"#FA5053",class:"custom-toast"});return}const r=new FormData(e),o=r.get("phone").trim(),n={name:r.get("name").trim(),phone:o.replace(/\D/g,""),dessertId:t,comment:r.get("comment").trim()};if(!/^380[0-9]{9}$/.test(n.phone)){i.error({message:"Введіть телефон у форматі 380961234568",position:"center",color:"#FA5053",messageColor:"#ffffff",class:"custom-toast"});return}try{await ue(n),i.success({message:"Замовлення успішно відправлено!",position:"topRight",color:"#24922E",messageColor:"#ffffff",class:"custom-toast"}),e.reset(),_()}catch(h){console.log("Error in order submit:",h),console.log("Server response:",(u=h.response)==null?void 0:u.data),console.log("Status:",(f=h.response)==null?void 0:f.status),i.error({message:((L=(b=h.response)==null?void 0:b.data)==null?void 0:L.message)||"Не вдалося надіслати заявку. Спробуйте ще раз.",position:"topRight",color:"#FA5053",messageColor:"#ffffff",class:"custom-toast"})}};let d=null,B=null;const pe=()=>{document.addEventListener("open-order-modal",s=>{const{dessertId:e}=s.detail||{};e&&me(e)})},me=s=>{B=s,d=document.createElement("div"),d.classList.add("order-modal-backdrop"),d.innerHTML=`
+        </li>`).join("");j.bestsellersList.innerHTML=e,y&&(y.destroy(!0,!0),y=null),y=new z(".swiper-bestsellers",{modules:[F,K,V],keyboard:{enabled:!0,onlyInViewport:!0},slidesPerView:1,slidesPerGroup:1,spaceBetween:16,breakpoints:{768:{slidesPerView:2,slidesPerGroup:2,spaceBetween:16},1440:{slidesPerView:3,slidesPerGroup:3,spaceBetween:24}},pagination:{el:".swiper-pagination",dynamicBullets:!0,clickable:!0},navigation:{prevEl:".page-left-btn",nextEl:".page-right-btn"},on:{init(){R()},resize(){R()}}})}const k={body:document.body},pe="https://deserts-store.b.goit.study/api",ge=async s=>{const{data:e}=await g.post(`${pe}/orders`,s);return e},H=s=>{s.target.classList.contains("order-modal-backdrop")&&v()},I=s=>{s.key==="Escape"&&v()},A=()=>{v()},T=async s=>{var _,S,C,q;s.preventDefault();const e=s.currentTarget,t=ye();if(!t){d.error({message:"Не вдалося визначити десерт для замовлення",position:"topRight",color:"#FA5053",messageColor:"#ffffff",class:"custom-toast"});return}const o=new FormData(e),r=o.get("name").trim(),i=o.get("phone").trim().replace(/\D/g,""),u=o.get("comment").trim();if(!r){d.error({message:"Введіть ім’я",position:"center",color:"#f5b6b6",messageColor:"#000000",class:"custom-toast"});return}if(r.length<2){d.error({message:"Ім’я має містити щонайменше 2 символи",position:"center",color:"#f5b6b6",messageColor:"#000000",class:"custom-toast"});return}if(!/^380[0-9]{9}$/.test(i)){d.error({message:"Введіть телефон у форматі 380961234568",position:"center",color:"#f5b6b6",messageColor:"#000000",class:"custom-toast"});return}if(!u){d.error({message:"Введіть коментар",position:"center",color:"#f5b6b6",messageColor:"#000000",class:"custom-toast"});return}if(u.length<5){d.error({message:"Коментар має містити щонайменше 5 символів",position:"center",color:"#f5b6b6",messageColor:"#000000",class:"custom-toast"});return}const h={name:r,phone:i,dessertId:t,comment:u};try{await ge(h),d.success({message:"Замовлення успішно відправлено!",position:"topRight",color:"#24922E",messageColor:"#ffffff",class:"custom-toast"}),e.reset(),v()}catch(f){console.log("Error in order submit:",f),console.log("Server response:",(_=f.response)==null?void 0:_.data),console.log("Status:",(S=f.response)==null?void 0:S.status),d.error({message:((q=(C=f.response)==null?void 0:C.data)==null?void 0:q.message)||"Не вдалося надіслати заявку. Спробуйте ще раз.",position:"topRight",color:"#FA5053",messageColor:"#ffffff",class:"custom-toast"})}};let l=null,M=null;const be=()=>{document.addEventListener("open-order-modal",s=>{const{dessertId:e}=s.detail||{};e&&fe(e)})},fe=s=>{M=s,l=document.createElement("div"),l.classList.add("order-modal-backdrop"),l.innerHTML=`
     <div
       class="order-modal"
       role="dialog"
@@ -153,7 +153,7 @@ import{a as g,i,A as H,S as I,N as T,P as F,K as N}from"./assets/vendor-YU0yCr7_
           height="24"
           aria-hidden="true"
         >
-          <use href="/img/sprite.svg#icon-close"></use>
+          <use href="../img/sprite.svg#icon-close"></use>
         </svg>
       </button>
 
@@ -161,16 +161,14 @@ import{a as g,i,A as H,S as I,N as T,P as F,K as N}from"./assets/vendor-YU0yCr7_
         Оформлення замовлення
       </h2>
 
-      <form class="order-form js-order-form">
-        <label class="order-form__label">
-          <span class="order-form__label-text">Ім'я*</span>
-          <input
-            class="order-form__input"
-            type="text"
-            name="name"
+      <form class="order-form js-order-form" novalidate>
+      <label class="order-form__label">
+        <span class="order-form__label-text">Ім'я*</span>
+        <input
+          class="order-form__input"
+          type="text"
+          name="name"
             placeholder="Вікторія"
-            required
-            minlength="2"
           />
         </label>
 
@@ -181,7 +179,6 @@ import{a as g,i,A as H,S as I,N as T,P as F,K as N}from"./assets/vendor-YU0yCr7_
             type="tel"
             name="phone"
             placeholder="38 0__ ______"
-            required
           />
         </label>
 
@@ -191,8 +188,6 @@ import{a as g,i,A as H,S as I,N as T,P as F,K as N}from"./assets/vendor-YU0yCr7_
             class="order-form__textarea"
             name="comment"
             placeholder="Ваш коментар"
-            required
-            minlength="5"
           ></textarea>
         </label>
 
@@ -201,5 +196,5 @@ import{a as g,i,A as H,S as I,N as T,P as F,K as N}from"./assets/vendor-YU0yCr7_
         </button>
       </form>
     </div>
-  `,E.body.append(d),E.body.classList.add("no-scroll"),d.addEventListener("click",O),document.addEventListener("keydown",j),d.querySelector(".js-order-modal-close").addEventListener("click",P),d.querySelector(".js-order-form").addEventListener("submit",A)},_=()=>{if(!d)return;const s=d.querySelector(".js-order-modal-close");s==null||s.removeEventListener("click",P);const e=d.querySelector(".js-order-form");e==null||e.removeEventListener("submit",A),d.removeEventListener("click",O),document.removeEventListener("keydown",j),d.remove(),d=null,B=null,E.body.classList.remove("no-scroll")},ge=()=>B;pe();
+  `,k.body.append(l),k.body.classList.add("no-scroll"),l.addEventListener("click",H),document.addEventListener("keydown",I),l.querySelector(".js-order-modal-close").addEventListener("click",A),l.querySelector(".js-order-form").addEventListener("submit",T)},v=()=>{if(!l)return;const s=l.querySelector(".js-order-modal-close");s==null||s.removeEventListener("click",A);const e=l.querySelector(".js-order-form");e==null||e.removeEventListener("submit",T),l.removeEventListener("click",H),document.removeEventListener("keydown",I),l.remove(),l=null,M=null,k.body.classList.remove("no-scroll")},ye=()=>M;be();
 //# sourceMappingURL=index.js.map

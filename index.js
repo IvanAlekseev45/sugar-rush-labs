@@ -1,12 +1,78 @@
-import{a as y,A as w,S as _,N as f,P as v}from"./assets/vendor-Cds40s8X.js";(function(){const s=document.createElement("link").relList;if(s&&s.supports&&s.supports("modulepreload"))return;for(const o of document.querySelectorAll('link[rel="modulepreload"]'))a(o);new MutationObserver(o=>{for(const d of o)if(d.type==="childList")for(const n of d.addedNodes)n.tagName==="LINK"&&n.rel==="modulepreload"&&a(n)}).observe(document,{childList:!0,subtree:!0});function t(o){const d={};return o.integrity&&(d.integrity=o.integrity),o.referrerPolicy&&(d.referrerPolicy=o.referrerPolicy),o.crossOrigin==="use-credentials"?d.credentials="include":o.crossOrigin==="anonymous"?d.credentials="omit":d.credentials="same-origin",d}function a(o){if(o.ep)return;o.ep=!0;const d=t(o);fetch(o.href,d)}})();const r={dessertList:document.querySelector(".dessert-list"),dessertCategory:document.querySelector(".dessert-category"),dessertLoadMoreBtn:document.querySelector(".dessert-load-more-btn"),dropdown:document.querySelector(".category-dropdown"),dropdownBtn:document.querySelector(".category-dropdown__btn"),dropdownText:document.querySelector(".category-dropdown__text"),dessertLoader:document.querySelector(".dessert-loader")},B=async()=>{const e="https://deserts-store.b.goit.study/api",{data:s}=await y.get(`${e}/categories`);return s},M=async()=>{try{const e=await B(),s=`
+import{a as g,i as h,A as k,S as E,N as S,P as C}from"./assets/vendor-DwCZRSuH.js";(function(){const s=document.createElement("link").relList;if(s&&s.supports&&s.supports("modulepreload"))return;for(const r of document.querySelectorAll('link[rel="modulepreload"]'))o(r);new MutationObserver(r=>{for(const n of r)if(n.type==="childList")for(const l of n.addedNodes)l.tagName==="LINK"&&l.rel==="modulepreload"&&o(l)}).observe(document,{childList:!0,subtree:!0});function t(r){const n={};return r.integrity&&(n.integrity=r.integrity),r.referrerPolicy&&(n.referrerPolicy=r.referrerPolicy),r.crossOrigin==="use-credentials"?n.credentials="include":r.crossOrigin==="anonymous"?n.credentials="omit":n.credentials="same-origin",n}function o(r){if(r.ep)return;r.ep=!0;const n=t(r);fetch(r.href,n)}})();const y={body:document.body},q=async e=>{const s="https://deserts-store.b.goit.study/api",{data:t}=await g.get(`${s}/desserts/${e}`);return t},D=async e=>{const s=e.target.closest(".js-dessert-modal-open");if(!s)return;const t=s.dataset.id;if(!t){h.error({message:"Не вдалося визначити десерт. Спробуйте ще раз.",position:"topRight"});return}j();try{const o=await q(t);N(o)}catch(o){u(),h.error({message:"Не вдалося завантажити інформацію про десерт. Спробуйте ще раз.",position:"topRight"}),console.log(o)}},P=e=>{const s=x();e.target===s&&u()},L=e=>{e.key==="Escape"&&u()},O=()=>{u()},R=()=>{u();const e=new CustomEvent("open-order-modal");document.dispatchEvent(e)};let a=null;const T=()=>{document.addEventListener("click",D)},j=()=>{a=document.createElement("div"),a.classList.add("dessert-modal-backdrop"),a.innerHTML=`
+    <div class="dessert-modal" role="dialog" aria-modal="true">
+      <button
+        class="dessert-modal__close-btn"
+        type="button"
+        aria-label="Close modal"
+      >
+        <svg
+          class="dessert-modal__close-icon"
+          width="24"
+          height="24"
+          aria-hidden="true"
+        >
+          <use href="/img/sprite.svg#icon-close"></use>
+        </svg>
+      </button>
+
+      <div class="dessert-modal__content">
+        <div class="loader">
+          <div class="cup">
+            <div class="cup-handle"></div>
+            <div class="smoke one"></div>
+            <div class="smoke two"></div>
+            <div class="smoke three"></div>
+          </div>
+          <div class="load">Loading...</div>
+        </div>
+      </div>
+    </div>
+  `,y.body.append(a),y.body.classList.add("no-scroll"),a.addEventListener("click",P),document.addEventListener("keydown",L),a.querySelector(".dessert-modal__close-btn").addEventListener("click",O)},u=()=>{a&&(a.remove(),a=null,y.body.classList.remove("no-scroll"),document.removeEventListener("keydown",L))},x=()=>a,N=e=>{const s=a.querySelector(".dessert-modal__content"),{_id:t,name:o,price:r,rate:n,description:l,composition:c,image:M}=e,$=c||"";s.innerHTML=`
+    <img
+      class="dessert-modal__image"
+      src="${M}"
+      alt="${o}"
+    />
+
+    <div class="dessert-modal__info">
+
+      <h2 class="dessert-modal__title">${o}</h2>
+
+      <p class="dessert-modal__price">${r} грн</p>
+
+      <div class="dessert-modal__rating">
+        ${I(n)}
+      </div>
+
+      <p class="dessert-modal__description">
+        ${l}
+      </p>
+
+      <p class="dessert-modal__ingredients">
+        <b>Склад:</b> ${$}
+      </p>
+
+      <button
+        class="dessert-modal__order-btn"
+        type="button"
+        data-dessert-id="${t}"
+      >
+        Перейти до замовлення
+      </button>
+    </div>
+  `,s.querySelector(".dessert-modal__order-btn").addEventListener("click",R)},A=e=>{const s=Number(e);return Number.isNaN(s)?0:Math.round(s*2)/2},I=e=>{const s=A(e);return`
+    <div class="dessert-rating" aria-label="Рейтинг ${s} з 5">
+      ${[1,2,3,4,5].map(t=>s>=t?'<span class="dessert-rating__star dessert-rating__star--filled">★</span>':s===t-.5?'<span class="dessert-rating__star dessert-rating__star--half">★</span>':'<span class="dessert-rating__star">☆</span>').join("")}
+    </div>
+  `};T();const d={dessertList:document.querySelector(".dessert-list"),dessertCategory:document.querySelector(".dessert-category"),dessertLoadMoreBtn:document.querySelector(".dessert-load-more-btn"),dropdown:document.querySelector(".category-dropdown"),dropdownBtn:document.querySelector(".category-dropdown__btn"),dropdownText:document.querySelector(".category-dropdown__text"),dessertLoader:document.querySelector(".dessert-loader")},H=async()=>{const e="https://deserts-store.b.goit.study/api",{data:s}=await g.get(`${e}/categories`);return s},z=async()=>{try{const e=await H(),s=`
     <li class="dessert-category__item">
         <button class="dessert-category__btn active__btn" type="button" data-id="all">Всі десерти</button>
     </li>
-  `,t=e.map(({_id:a,name:o})=>`
+  `,t=e.map(({_id:o,name:r})=>`
         <li class="dessert-category__item">
-            <button class="dessert-category__btn" type="button" data-id="${a}">${o}</button>
+            <button class="dessert-category__btn" type="button" data-id="${o}">${r}</button>
         </li>
-      `).join("");r.dessertCategory.insertAdjacentHTML("beforeend",s+t)}catch(e){console.log(e)}},g=async(e=1,s="all")=>{const t=s==="all"?"https://deserts-store.b.goit.study/api/desserts":`https://deserts-store.b.goit.study/api/desserts?category=${s}`,{data:a}=await y.get(`${t}`,{params:{page:e,limit:8}});return a},$="/sugar-rush-labs/assets/sprite-7MDemDlu.svg",m=e=>{const s=e.map(({_id:t,name:a,description:o,price:d,category:n,image:u})=>`
+      `).join("");d.dessertCategory.insertAdjacentHTML("beforeend",s+t)}catch(e){console.log(e)}},v=async(e=1,s="all")=>{const t=s==="all"?"https://deserts-store.b.goit.study/api/desserts":`https://deserts-store.b.goit.study/api/desserts?category=${s}`,{data:o}=await g.get(`${t}`,{params:{page:e,limit:8}});return o},F="/sugar-rush-labs/assets/sprite-7MDemDlu.svg",b=e=>{const s=e.map(({_id:t,name:o,description:r,price:n,category:l,image:c})=>`
       <li class="dessert-list__item">
         <div class="dessert-list__wrapper">
 
@@ -22,33 +88,33 @@ import{a as y,A as w,S as _,N as f,P as v}from"./assets/vendor-Cds40s8X.js";(fun
             </div>
           </div>
 
-          <img class="dessert-list__image" src="${u}" alt="${a}" />
-          <p class="dessert-list__category">${n.name}</p>
+          <img class="dessert-list__image" src="${c}" alt="${o}" />
+          <p class="dessert-list__category">${l.name}</p>
 
-          <p class="dessert-list__title">${a}</p>
-          <p class="dessert-list__description">${o}</p>
+          <p class="dessert-list__title">${o}</p>
+          <p class="dessert-list__description">${r}</p>
         </div>
         <div class="dessert-list__wrapper__bottom">
-          <p class="dessert-list__price">${d} грн</p>
+          <p class="dessert-list__price">${n} грн</p>
           <button class="dessert-list__btn js-dessert-modal-open" type="button" data-id="${t}">
             <svg width="17" height="17" class="dessert-list__icon" aria-hidden="true">
-              <use href="${$}#icon-arrow_outward"></use>
+              <use href="${F}#icon-arrow_outward"></use>
             </svg>
           </button>
         </div>
       </li>
-      `).join("");r.dessertList.insertAdjacentHTML("beforeend",s),r.dessertList.querySelectorAll(".dessert-list__image").forEach(t=>{const a=t.previousElementSibling;if(t.complete){a.style.display="none",t.classList.add("img__is-loaded");return}t.addEventListener("load",()=>{a.style.display="none",t.classList.add("img__is-loaded")}),t.addEventListener("error",()=>{a.style.display="none",t.classList.add("img__is-loaded")})})},S=()=>{r.dessertLoader.style.display="block"},q=()=>{r.dessertLoader.style.display="none"},l={showLoader:S,hideLoader:q},E=async(e=1,s="all")=>{l.showLoader();try{const{desserts:t}=await g(e,s);m(t),l.hideLoader(),r.dessertLoadMoreBtn.classList.remove("dessert-button-hidden")}catch(t){console.log(t)}};let i=1,p="all";const b=e=>{const s=Math.ceil(e/8);i<s?(r.dessertLoadMoreBtn.classList.remove("dessert-button-hidden"),r.dessertLoadMoreBtn.disabled=!1):(r.dessertLoadMoreBtn.classList.add("dessert-button-hidden"),r.dessertLoadMoreBtn.disabled=!0)},k=async e=>{const s=e.target.closest(".dessert-category__btn");if(s){i=1,p=s.dataset.id,r.dessertList.innerHTML="",l.showLoader(),await new Promise(t=>requestAnimationFrame(t));try{const t=await g(i,p);m(t.desserts),b(t.totalItems)}catch(t){console.log(t)}finally{l.hideLoader()}}},P=async()=>{r.dessertLoadMoreBtn.classList.add("dessert-button-hidden"),r.dessertLoadMoreBtn.disabled=!0,l.showLoader(),i+=1;try{const e=await g(i,p);m(e.desserts),b(e.totalItems)}catch(e){console.log(e)}finally{l.hideLoader()}},L={handleCategoryFilter:k,handleLoadMoreDesserts:P};r.dropdownBtn.addEventListener("click",()=>{r.dropdown.classList.toggle("is-open")});r.dropdown.addEventListener("click",e=>{const s=e.target.closest(".dessert-category__btn");s&&(r.dropdownText.textContent=s.textContent,r.dropdown.classList.remove("is-open"))});document.addEventListener("click",e=>{r.dropdown.contains(e.target)||r.dropdown.classList.remove("is-open")});M();E();r.dessertCategory.addEventListener("click",L.handleCategoryFilter);r.dessertLoadMoreBtn.addEventListener("click",L.handleLoadMoreDesserts);new w(".accordion-container",{showMultiple:!0,duration:300});const h={bestsellersList:document.querySelector(".bestsellers-list"),loaderBestsellers:document.querySelector(".bestsellers-loader"),leftBtn:document.querySelector(".page-left-btn"),rightBtn:document.querySelector(".page-right-btn")},C=async()=>{const e="https://deserts-store.b.goit.study/api",{data:s}=await y.get(`${e}/desserts?type=popular`);return s};async function j(){const e=h.loaderBestsellers;e.style.display="block";try{const{desserts:s}=await C();x(s)}catch(s){console.error(s)}finally{e.style.display="none"}}document.addEventListener("DOMContentLoaded",j);let c=null;function x(e){const s=e.map(({image:t,category:a,description:o,name:d,price:n,_id:u})=>`<li class="bestsellers-list-item swiper-slide">
-          <img class="bestsellers-image" src="${t}" alt="${d}"/>
-          <p class="bestsellers-category">${a.name}</p>
-          <h3 class="bestsellers-name">${d}</h3>
-          <p class="bestsellers-description">${o}</p>
+      `).join("");d.dessertList.insertAdjacentHTML("beforeend",s),d.dessertList.querySelectorAll(".dessert-list__image").forEach(t=>{const o=t.previousElementSibling;if(t.complete){o.style.display="none",t.classList.add("img__is-loaded");return}t.addEventListener("load",()=>{o.style.display="none",t.classList.add("img__is-loaded")}),t.addEventListener("error",()=>{o.style.display="none",t.classList.add("img__is-loaded")})})},V=()=>{d.dessertLoader.style.display="block"},K=()=>{d.dessertLoader.style.display="none"},i={showLoader:V,hideLoader:K},U=async(e=1,s="all")=>{i.showLoader();try{const{desserts:t}=await v(e,s);b(t),i.hideLoader(),d.dessertLoadMoreBtn.classList.remove("dessert-button-hidden")}catch(t){console.log(t)}};let p=1,_="all";const f=e=>{const s=Math.ceil(e/8);p<s?(d.dessertLoadMoreBtn.classList.remove("dessert-button-hidden"),d.dessertLoadMoreBtn.disabled=!1):(d.dessertLoadMoreBtn.classList.add("dessert-button-hidden"),d.dessertLoadMoreBtn.disabled=!0)},G=async e=>{const s=e.target.closest(".dessert-category__btn");if(s){p=1,_=s.dataset.id,d.dessertList.innerHTML="",i.showLoader(),await new Promise(t=>requestAnimationFrame(t));try{const t=await v(p,_);b(t.desserts),f(t.totalItems)}catch(t){console.log(t)}finally{i.hideLoader()}}},J=async()=>{d.dessertLoadMoreBtn.classList.add("dessert-button-hidden"),d.dessertLoadMoreBtn.disabled=!0,i.showLoader(),p+=1;try{const e=await v(p,_);b(e.desserts),f(e.totalItems)}catch(e){console.log(e)}finally{i.hideLoader()}},w={handleCategoryFilter:G,handleLoadMoreDesserts:J};d.dropdownBtn.addEventListener("click",()=>{d.dropdown.classList.toggle("is-open")});d.dropdown.addEventListener("click",e=>{const s=e.target.closest(".dessert-category__btn");s&&(d.dropdownText.textContent=s.textContent,d.dropdown.classList.remove("is-open"))});document.addEventListener("click",e=>{d.dropdown.contains(e.target)||d.dropdown.classList.remove("is-open")});z();U();d.dessertCategory.addEventListener("click",w.handleCategoryFilter);d.dessertLoadMoreBtn.addEventListener("click",w.handleLoadMoreDesserts);new k(".accordion-container",{showMultiple:!0,duration:300});const B={bestsellersList:document.querySelector(".bestsellers-list"),loaderBestsellers:document.querySelector(".bestsellers-loader"),leftBtn:document.querySelector(".page-left-btn"),rightBtn:document.querySelector(".page-right-btn")},Q=async()=>{const e="https://deserts-store.b.goit.study/api",{data:s}=await g.get(`${e}/desserts?type=popular`);return s};async function W(){const e=B.loaderBestsellers;e.style.display="block";try{const{desserts:s}=await Q();X(s)}catch(s){console.error(s)}finally{e.style.display="none"}}document.addEventListener("DOMContentLoaded",W);let m=null;function X(e){const s=e.map(({image:t,category:o,description:r,name:n,price:l,_id:c})=>`<li class="bestsellers-list-item swiper-slide">
+          <img class="bestsellers-image" src="${t}" alt="${n}"/>
+          <p class="bestsellers-category">${o.name}</p>
+          <h3 class="bestsellers-name">${n}</h3>
+          <p class="bestsellers-description">${r}</p>
           <div class="bestsellers-wrapper">
-            <p class="bestsellers-price">${n} грн</p>
-            <button class="bestsellers-modal-btn js-dessert-modal-open" type="button" data-id="${u}">
+            <p class="bestsellers-price">${l} грн</p>
+            <button class="bestsellers-modal-btn js-dessert-modal-open" type="button" data-id="${c}">
               <svg width="24" height="24" aria-hidden="true">
                 <use href="/img/sprite.svg#icon-arrow_outward"></use>
               </svg>
             </button>
           </div>
-        </li>`).join("");h.bestsellersList.innerHTML=s,c&&(c.destroy(!0,!0),c=null),c=new _(".swiper-bestsellers",{modules:[f,v],pagination:{el:".swiper-pagination",dynamicBullets:!0},navigation:{prevEl:".page-left-btn",nextEl:".page-right-btn"},slidesPerView:1,spaceBetween:16,breakpoints:{768:{slidesPerView:2,spaceBetween:16},1280:{slidesPerView:3,spaceBetween:24}}})}
+        </li>`).join("");B.bestsellersList.innerHTML=s,m&&(m.destroy(!0,!0),m=null),m=new E(".swiper-bestsellers",{modules:[S,C],pagination:{el:".swiper-pagination",dynamicBullets:!0},navigation:{prevEl:".page-left-btn",nextEl:".page-right-btn"},slidesPerView:1,spaceBetween:16,breakpoints:{768:{slidesPerView:2,spaceBetween:16},1280:{slidesPerView:3,spaceBetween:24}}})}
 //# sourceMappingURL=index.js.map

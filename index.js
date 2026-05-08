@@ -114,7 +114,7 @@ import{a as g,i,A as H,S as I,N as T,P as F,K as N}from"./assets/vendor-YU0yCr7_
         <div class="dessert-list__wrapper__bottom">
           <p class="dessert-list__price">${n} грн</p>
           <button class="dessert-list__btn js-dessert-modal-open" type="button" data-id="${t}">
-            <svg width="17" height="17" class="dessert-list__icon" aria-hidden="true">
+            <svg width="24" height="24" class="dessert-list__icon" aria-hidden="true">
               <use href="${q}#icon-arrow_outward"></use>
             </svg>
           </button>

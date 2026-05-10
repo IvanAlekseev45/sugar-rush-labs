@@ -198,7 +198,7 @@ import{a as g,i as l,A as J,S as M,N as O,P as D,K as X}from"./assets/vendor-BRB
         </div>
         <div class="dessert-list__wrapper__bottom">
           <p class="dessert-list__price">${n} грн</p>
-          <button class="dessert-list__btn js-dessert-modal-open" type="button" data-id="${t} aria-label="Подивитись детальну інформацію">
+          <button class="dessert-list__btn js-dessert-modal-open" type="button" data-id="${t}" aria-label="Подивитись детальну інформацію">
             <svg width="24" height="24" class="dessert-list__icon" aria-hidden="true">
               <use href="${U}#icon-arrow_outward"></use>
             </svg>

@@ -168,11 +168,11 @@ import{a as b,i as l,A as G,S as B,N as O,P as D,K as Z}from"./assets/vendor-BRB
     </div>
   `};ie();const a={dessertList:document.querySelector(".dessert-list"),dessertCategory:document.querySelector(".dessert-category"),dessertLoadMoreBtn:document.querySelector(".dessert-load-more-btn"),dropdown:document.querySelector(".category-dropdown"),dropdownBtn:document.querySelector(".category-dropdown__btn"),dropdownText:document.querySelector(".category-dropdown__text"),dessertLoader:document.querySelector(".dessert-loader")},ge=async()=>{const e="https://deserts-store.b.goit.study/api",{data:s}=await b.get(`${e}/categories`);return s},be=async()=>{try{const e=await ge(),s=`
     <li class="dessert-category__item">
-        <button class="dessert-category__btn active__btn" type="button" data-id="all">Всі десерти</button>
+        <button class="dessert-category__btn active__btn" type="button" data-id="all" aria-label="Перейти до всіх категорій">Всі десерти</button>
     </li>
   `,t=e.map(({_id:r,name:o})=>`
         <li class="dessert-category__item">
-            <button class="dessert-category__btn" type="button" data-id="${r}">${o}</button>
+            <button class="dessert-category__btn" type="button" data-id="${r}" aria-label="Перейти до категорії ${o}">${o}</button>
         </li>
       `).join("");a.dessertCategory.insertAdjacentHTML("beforeend",s+t)}catch{l.error({message:"Виникла помилка при завантаженні категорій, спробуйте пізніше.",position:"topRight"})}},C=async(e=1,s="all")=>{const t=s==="all"?"https://deserts-store.b.goit.study/api/desserts":`https://deserts-store.b.goit.study/api/desserts?category=${s}`,{data:r}=await b.get(`${t}`,{params:{page:e,limit:8}});return r},V="/sugar-rush-labs/assets/sprite-CbHn4Fkf.svg",x=e=>{const s=e.map(({_id:t,name:r,description:o,price:n,category:d,image:u})=>`
       <li class="dessert-list__item">
@@ -198,7 +198,7 @@ import{a as b,i as l,A as G,S as B,N as O,P as D,K as Z}from"./assets/vendor-BRB
         </div>
         <div class="dessert-list__wrapper__bottom">
           <p class="dessert-list__price">${n} грн</p>
-          <button class="dessert-list__btn js-dessert-modal-open" type="button" data-id="${t}">
+          <button class="dessert-list__btn js-dessert-modal-open" type="button" data-id="${t} aria-label="Подивитись детальну інформацію">
             <svg width="24" height="24" class="dessert-list__icon" aria-hidden="true">
               <use href="${V}#icon-arrow_outward"></use>
             </svg>
